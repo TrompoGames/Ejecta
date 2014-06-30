@@ -75,8 +75,8 @@ static inline float EJDistanceToLineSegment(const EJVector2 p, const EJVector2 v
 
 static inline EJVector2 EJVector2ApplyTransform(EJVector2 p, CGAffineTransform t) {
 	EJVector2 pt = {
-		t.a * p.x + t.c * p.y + t.tx,
-		t.b * p.x + t.d * p.y + t.ty
+		(float)(t.a * p.x + t.c * p.y + t.tx),
+		(float)(t.b * p.x + t.d * p.y + t.ty)
 	};
 	return pt;
 }

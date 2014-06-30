@@ -1090,8 +1090,8 @@ EJ_BIND_FUNCTION(getUniform, ctx, argc, argv) {
 	glGetProgramiv(program, GL_ACTIVE_UNIFORM_MAX_LENGTH, &nameLength);
 	
 	BOOL found = false;
-	GLint numElements;
-	GLenum elementType;
+	GLint numElements = 0;
+	GLenum elementType = 0;
 	GLchar *nameBuffer = malloc(nameLength);
 	
 	for( int i = 0; i < numUniforms; i++ ) {

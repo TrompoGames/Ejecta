@@ -26,12 +26,12 @@
 }
 
 - (void)leaderboardViewControllerDidFinish:(GKLeaderboardViewController *)viewController {
-	[viewController.presentingViewController dismissModalViewControllerAnimated:YES];
+	[viewController.presentingViewController dismissViewControllerAnimated:YES completion:nil];
 	viewIsActive = false;
 }
 
 - (void)achievementViewControllerDidFinish:(GKAchievementViewController *)viewController {
-	[viewController.presentingViewController dismissModalViewControllerAnimated:YES];
+	[viewController.presentingViewController dismissViewControllerAnimated:YES completion:nil];
 	viewIsActive = false;
 }
 

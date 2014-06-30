@@ -1,0 +1,892 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		A332C2551961191700B55EA1 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A332C2541961191700B55EA1 /* Foundation.framework */; };
+		A332C2631961191700B55EA1 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A332C2621961191700B55EA1 /* XCTest.framework */; };
+		A332C2641961191700B55EA1 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A332C2541961191700B55EA1 /* Foundation.framework */; };
+		A332C2661961191700B55EA1 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A332C2651961191700B55EA1 /* UIKit.framework */; };
+		A332C2691961191700B55EA1 /* liblibEjecta.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A332C2511961191700B55EA1 /* liblibEjecta.a */; };
+		A332C3171961194300B55EA1 /* EJAppViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A332C27F1961194300B55EA1 /* EJAppViewController.m */; };
+		A332C3181961194300B55EA1 /* EJAudioSourceAVAudio.m in Sources */ = {isa = PBXBuildFile; fileRef = A332C2831961194300B55EA1 /* EJAudioSourceAVAudio.m */; };
+		A332C3191961194300B55EA1 /* EJAudioSourceOpenAL.m in Sources */ = {isa = PBXBuildFile; fileRef = A332C2851961194300B55EA1 /* EJAudioSourceOpenAL.m */; };
+		A332C31A1961194300B55EA1 /* EJBindingAudio.m in Sources */ = {isa = PBXBuildFile; fileRef = A332C2871961194300B55EA1 /* EJBindingAudio.m */; };
+		A332C31B1961194300B55EA1 /* EJOpenALBuffer.m in Sources */ = {isa = PBXBuildFile; fileRef = A332C2891961194300B55EA1 /* EJOpenALBuffer.m */; };
+		A332C31C1961194300B55EA1 /* EJSharedOpenALManager.m in Sources */ = {isa = PBXBuildFile; fileRef = A332C28B1961194300B55EA1 /* EJSharedOpenALManager.m */; };
+		A332C31D1961194300B55EA1 /* EJBindingBase.m in Sources */ = {isa = PBXBuildFile; fileRef = A332C28D1961194300B55EA1 /* EJBindingBase.m */; };
+		A332C31E1961194300B55EA1 /* EJBindingEjectaCore.m in Sources */ = {isa = PBXBuildFile; fileRef = A332C28F1961194300B55EA1 /* EJBindingEjectaCore.m */; };
+		A332C31F1961194300B55EA1 /* EJBindingEventedBase.m in Sources */ = {isa = PBXBuildFile; fileRef = A332C2911961194300B55EA1 /* EJBindingEventedBase.m */; };
+		A332C3201961194300B55EA1 /* EJBindingVideo.m in Sources */ = {isa = PBXBuildFile; fileRef = A332C2931961194300B55EA1 /* EJBindingVideo.m */; };
+		A332C3211961194300B55EA1 /* EJBindingCanvasContext2D.m in Sources */ = {isa = PBXBuildFile; fileRef = A332C2971961194300B55EA1 /* EJBindingCanvasContext2D.m */; };
+		A332C3221961194300B55EA1 /* EJBindingCanvasGradient.m in Sources */ = {isa = PBXBuildFile; fileRef = A332C2991961194300B55EA1 /* EJBindingCanvasGradient.m */; };
+		A332C3231961194300B55EA1 /* EJBindingCanvasPattern.m in Sources */ = {isa = PBXBuildFile; fileRef = A332C29B1961194300B55EA1 /* EJBindingCanvasPattern.m */; };
+		A332C3241961194300B55EA1 /* EJBindingImageData.m in Sources */ = {isa = PBXBuildFile; fileRef = A332C29D1961194300B55EA1 /* EJBindingImageData.m */; };
+		A332C3251961194300B55EA1 /* EJBindingTextMetrics.m in Sources */ = {isa = PBXBuildFile; fileRef = A332C29F1961194300B55EA1 /* EJBindingTextMetrics.m */; };
+		A332C3261961194300B55EA1 /* EJCanvasContext2D.m in Sources */ = {isa = PBXBuildFile; fileRef = A332C2A21961194300B55EA1 /* EJCanvasContext2D.m */; };
+		A332C3271961194300B55EA1 /* EJCanvasContext2DScreen.m in Sources */ = {isa = PBXBuildFile; fileRef = A332C2A41961194300B55EA1 /* EJCanvasContext2DScreen.m */; };
+		A332C3281961194300B55EA1 /* EJCanvasContext2DTexture.m in Sources */ = {isa = PBXBuildFile; fileRef = A332C2A61961194300B55EA1 /* EJCanvasContext2DTexture.m */; };
+		A332C3291961194300B55EA1 /* EJCanvasGradient.m in Sources */ = {isa = PBXBuildFile; fileRef = A332C2A81961194300B55EA1 /* EJCanvasGradient.m */; };
+		A332C32A1961194300B55EA1 /* EJCanvasPattern.m in Sources */ = {isa = PBXBuildFile; fileRef = A332C2AA1961194300B55EA1 /* EJCanvasPattern.m */; };
+		A332C32B1961194300B55EA1 /* EJConvertColorRGBA.m in Sources */ = {isa = PBXBuildFile; fileRef = A332C2AC1961194300B55EA1 /* EJConvertColorRGBA.m */; };
+		A332C32C1961194300B55EA1 /* EJFont.mm in Sources */ = {isa = PBXBuildFile; fileRef = A332C2AE1961194300B55EA1 /* EJFont.mm */; };
+		A332C32D1961194300B55EA1 /* EJFontCache.m in Sources */ = {isa = PBXBuildFile; fileRef = A332C2B01961194300B55EA1 /* EJFontCache.m */; };
+		A332C32E1961194300B55EA1 /* EJGLProgram2D.m in Sources */ = {isa = PBXBuildFile; fileRef = A332C2B21961194300B55EA1 /* EJGLProgram2D.m */; };
+		A332C32F1961194300B55EA1 /* EJGLProgram2DRadialGradient.m in Sources */ = {isa = PBXBuildFile; fileRef = A332C2B41961194300B55EA1 /* EJGLProgram2DRadialGradient.m */; };
+		A332C3301961194300B55EA1 /* EJImageData.m in Sources */ = {isa = PBXBuildFile; fileRef = A332C2B61961194300B55EA1 /* EJImageData.m */; };
+		A332C3311961194300B55EA1 /* EJPath.mm in Sources */ = {isa = PBXBuildFile; fileRef = A332C2B81961194300B55EA1 /* EJPath.mm */; };
+		A332C3321961194300B55EA1 /* EAGLView.m in Sources */ = {isa = PBXBuildFile; fileRef = A332C2C11961194300B55EA1 /* EAGLView.m */; };
+		A332C3331961194300B55EA1 /* EJBindingCanvas.m in Sources */ = {isa = PBXBuildFile; fileRef = A332C2C31961194300B55EA1 /* EJBindingCanvas.m */; };
+		A332C3341961194300B55EA1 /* EJBindingCanvasStyle.m in Sources */ = {isa = PBXBuildFile; fileRef = A332C2C51961194300B55EA1 /* EJBindingCanvasStyle.m */; };
+		A332C3351961194300B55EA1 /* EJBindingImage.m in Sources */ = {isa = PBXBuildFile; fileRef = A332C2C71961194300B55EA1 /* EJBindingImage.m */; };
+		A332C3361961194300B55EA1 /* EJCanvasContext.m in Sources */ = {isa = PBXBuildFile; fileRef = A332C2C91961194300B55EA1 /* EJCanvasContext.m */; };
+		A332C3371961194300B55EA1 /* EJSharedTextureCache.m in Sources */ = {isa = PBXBuildFile; fileRef = A332C2CD1961194300B55EA1 /* EJSharedTextureCache.m */; };
+		A332C3381961194300B55EA1 /* EJTexture.m in Sources */ = {isa = PBXBuildFile; fileRef = A332C2CF1961194300B55EA1 /* EJTexture.m */; };
+		A332C3391961194300B55EA1 /* EJTextureStorage.m in Sources */ = {isa = PBXBuildFile; fileRef = A332C2D11961194300B55EA1 /* EJTextureStorage.m */; };
+		A332C33A1961194300B55EA1 /* EJBindingCanvasContextWebGL.m in Sources */ = {isa = PBXBuildFile; fileRef = A332C2D41961194300B55EA1 /* EJBindingCanvasContextWebGL.m */; };
+		A332C33B1961194300B55EA1 /* EJBindingWebGLExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = A332C2D61961194300B55EA1 /* EJBindingWebGLExtensions.m */; };
+		A332C33C1961194300B55EA1 /* EJBindingWebGLObjects.m in Sources */ = {isa = PBXBuildFile; fileRef = A332C2D81961194300B55EA1 /* EJBindingWebGLObjects.m */; };
+		A332C33D1961194300B55EA1 /* EJCanvasContextWebGL.m in Sources */ = {isa = PBXBuildFile; fileRef = A332C2DA1961194300B55EA1 /* EJCanvasContextWebGL.m */; };
+		A332C33E1961194300B55EA1 /* EJCanvasContextWebGLScreen.m in Sources */ = {isa = PBXBuildFile; fileRef = A332C2DC1961194300B55EA1 /* EJCanvasContextWebGLScreen.m */; };
+		A332C33F1961194300B55EA1 /* EJCanvasContextWebGLTexture.m in Sources */ = {isa = PBXBuildFile; fileRef = A332C2DE1961194300B55EA1 /* EJCanvasContextWebGLTexture.m */; };
+		A332C3401961194300B55EA1 /* EJConvertWebGL.m in Sources */ = {isa = PBXBuildFile; fileRef = A332C2E01961194300B55EA1 /* EJConvertWebGL.m */; };
+		A332C3411961194300B55EA1 /* EJClassLoader.m in Sources */ = {isa = PBXBuildFile; fileRef = A332C2E21961194300B55EA1 /* EJClassLoader.m */; };
+		A332C3421961194300B55EA1 /* EJConvert.m in Sources */ = {isa = PBXBuildFile; fileRef = A332C2E41961194300B55EA1 /* EJConvert.m */; };
+		A332C3441961194300B55EA1 /* EJJavaScriptView.m in Sources */ = {isa = PBXBuildFile; fileRef = A332C2E71961194300B55EA1 /* EJJavaScriptView.m */; };
+		A332C3451961194300B55EA1 /* EJNonRetainingProxy.m in Sources */ = {isa = PBXBuildFile; fileRef = A332C2E91961194300B55EA1 /* EJNonRetainingProxy.m */; };
+		A332C3461961194300B55EA1 /* EJSharedOpenGLContext.m in Sources */ = {isa = PBXBuildFile; fileRef = A332C2EB1961194300B55EA1 /* EJSharedOpenGLContext.m */; };
+		A332C3471961194300B55EA1 /* EJTimer.m in Sources */ = {isa = PBXBuildFile; fileRef = A332C2ED1961194300B55EA1 /* EJTimer.m */; };
+		A332C3481961194300B55EA1 /* EJBindingAdBanner.m in Sources */ = {isa = PBXBuildFile; fileRef = A332C2F01961194300B55EA1 /* EJBindingAdBanner.m */; };
+		A332C3491961194300B55EA1 /* EJBindingDeviceMotion.m in Sources */ = {isa = PBXBuildFile; fileRef = A332C2F21961194300B55EA1 /* EJBindingDeviceMotion.m */; };
+		A332C34A1961194300B55EA1 /* EJBindingGameCenter.m in Sources */ = {isa = PBXBuildFile; fileRef = A332C2F41961194300B55EA1 /* EJBindingGameCenter.m */; };
+		A332C34B1961194300B55EA1 /* EJBindingGeolocation.m in Sources */ = {isa = PBXBuildFile; fileRef = A332C2F61961194300B55EA1 /* EJBindingGeolocation.m */; };
+		A332C34C1961194300B55EA1 /* EJBindingHttpRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = A332C2F81961194300B55EA1 /* EJBindingHttpRequest.m */; };
+		A332C34D1961194300B55EA1 /* EJBindingImagePicker.m in Sources */ = {isa = PBXBuildFile; fileRef = A332C2FA1961194300B55EA1 /* EJBindingImagePicker.m */; };
+		A332C34E1961194300B55EA1 /* EJBindingKeyInput.m in Sources */ = {isa = PBXBuildFile; fileRef = A332C2FC1961194300B55EA1 /* EJBindingKeyInput.m */; };
+		A332C34F1961194300B55EA1 /* EJBindingLocalStorage.m in Sources */ = {isa = PBXBuildFile; fileRef = A332C2FE1961194300B55EA1 /* EJBindingLocalStorage.m */; };
+		A332C3501961194300B55EA1 /* EJBindingTouchInput.m in Sources */ = {isa = PBXBuildFile; fileRef = A332C3001961194300B55EA1 /* EJBindingTouchInput.m */; };
+		A332C3511961194300B55EA1 /* EJBindingWebSocket.m in Sources */ = {isa = PBXBuildFile; fileRef = A332C3021961194300B55EA1 /* EJBindingWebSocket.m */; };
+		A332C3521961194300B55EA1 /* EJBindingWindowEvents.m in Sources */ = {isa = PBXBuildFile; fileRef = A332C3041961194300B55EA1 /* EJBindingWindowEvents.m */; };
+		A332C3531961194300B55EA1 /* EJBindingIAPManager.m in Sources */ = {isa = PBXBuildFile; fileRef = A332C3071961194300B55EA1 /* EJBindingIAPManager.m */; };
+		A332C3541961194300B55EA1 /* EJBindingIAPProduct.m in Sources */ = {isa = PBXBuildFile; fileRef = A332C3091961194300B55EA1 /* EJBindingIAPProduct.m */; };
+		A332C3551961194300B55EA1 /* EJBindingIAPTransaction.m in Sources */ = {isa = PBXBuildFile; fileRef = A332C30B1961194300B55EA1 /* EJBindingIAPTransaction.m */; };
+		A332C3561961194300B55EA1 /* base64.c in Sources */ = {isa = PBXBuildFile; fileRef = A332C30D1961194300B55EA1 /* base64.c */; };
+		A332C3581961194300B55EA1 /* SRWebSocket.m in Sources */ = {isa = PBXBuildFile; fileRef = A332C3131961194300B55EA1 /* SRWebSocket.m */; settings = {COMPILER_FLAGS = "-fobjc-arc"; }; };
+		A332C35C196119D600B55EA1 /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A332C35B196119D600B55EA1 /* OpenGLES.framework */; };
+		A332C35E196119DC00B55EA1 /* JavaScriptCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A332C35D196119DC00B55EA1 /* JavaScriptCore.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		A332C2671961191700B55EA1 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = A332C2491961191700B55EA1 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = A332C2501961191700B55EA1;
+			remoteInfo = libEjecta;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		A332C24F1961191700B55EA1 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "include/$(PRODUCT_NAME)";
+			dstSubfolderSpec = 16;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		A332C2511961191700B55EA1 /* liblibEjecta.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = liblibEjecta.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		A332C2541961191700B55EA1 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		A332C2581961191700B55EA1 /* libEjecta-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "libEjecta-Prefix.pch"; sourceTree = "<group>"; };
+		A332C2611961191700B55EA1 /* libEjectaTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = libEjectaTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		A332C2621961191700B55EA1 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
+		A332C2651961191700B55EA1 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
+		A332C27E1961194300B55EA1 /* EJAppViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EJAppViewController.h; sourceTree = "<group>"; };
+		A332C27F1961194300B55EA1 /* EJAppViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EJAppViewController.m; sourceTree = "<group>"; };
+		A332C2811961194300B55EA1 /* EJAudioSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EJAudioSource.h; sourceTree = "<group>"; };
+		A332C2821961194300B55EA1 /* EJAudioSourceAVAudio.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EJAudioSourceAVAudio.h; sourceTree = "<group>"; };
+		A332C2831961194300B55EA1 /* EJAudioSourceAVAudio.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EJAudioSourceAVAudio.m; sourceTree = "<group>"; };
+		A332C2841961194300B55EA1 /* EJAudioSourceOpenAL.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EJAudioSourceOpenAL.h; sourceTree = "<group>"; };
+		A332C2851961194300B55EA1 /* EJAudioSourceOpenAL.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EJAudioSourceOpenAL.m; sourceTree = "<group>"; };
+		A332C2861961194300B55EA1 /* EJBindingAudio.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EJBindingAudio.h; sourceTree = "<group>"; };
+		A332C2871961194300B55EA1 /* EJBindingAudio.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EJBindingAudio.m; sourceTree = "<group>"; };
+		A332C2881961194300B55EA1 /* EJOpenALBuffer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EJOpenALBuffer.h; sourceTree = "<group>"; };
+		A332C2891961194300B55EA1 /* EJOpenALBuffer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EJOpenALBuffer.m; sourceTree = "<group>"; };
+		A332C28A1961194300B55EA1 /* EJSharedOpenALManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EJSharedOpenALManager.h; sourceTree = "<group>"; };
+		A332C28B1961194300B55EA1 /* EJSharedOpenALManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EJSharedOpenALManager.m; sourceTree = "<group>"; };
+		A332C28C1961194300B55EA1 /* EJBindingBase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EJBindingBase.h; sourceTree = "<group>"; };
+		A332C28D1961194300B55EA1 /* EJBindingBase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EJBindingBase.m; sourceTree = "<group>"; };
+		A332C28E1961194300B55EA1 /* EJBindingEjectaCore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EJBindingEjectaCore.h; sourceTree = "<group>"; };
+		A332C28F1961194300B55EA1 /* EJBindingEjectaCore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EJBindingEjectaCore.m; sourceTree = "<group>"; };
+		A332C2901961194300B55EA1 /* EJBindingEventedBase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EJBindingEventedBase.h; sourceTree = "<group>"; };
+		A332C2911961194300B55EA1 /* EJBindingEventedBase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EJBindingEventedBase.m; sourceTree = "<group>"; };
+		A332C2921961194300B55EA1 /* EJBindingVideo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EJBindingVideo.h; sourceTree = "<group>"; };
+		A332C2931961194300B55EA1 /* EJBindingVideo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EJBindingVideo.m; sourceTree = "<group>"; };
+		A332C2961961194300B55EA1 /* EJBindingCanvasContext2D.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EJBindingCanvasContext2D.h; sourceTree = "<group>"; };
+		A332C2971961194300B55EA1 /* EJBindingCanvasContext2D.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EJBindingCanvasContext2D.m; sourceTree = "<group>"; };
+		A332C2981961194300B55EA1 /* EJBindingCanvasGradient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EJBindingCanvasGradient.h; sourceTree = "<group>"; };
+		A332C2991961194300B55EA1 /* EJBindingCanvasGradient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EJBindingCanvasGradient.m; sourceTree = "<group>"; };
+		A332C29A1961194300B55EA1 /* EJBindingCanvasPattern.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EJBindingCanvasPattern.h; sourceTree = "<group>"; };
+		A332C29B1961194300B55EA1 /* EJBindingCanvasPattern.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EJBindingCanvasPattern.m; sourceTree = "<group>"; };
+		A332C29C1961194300B55EA1 /* EJBindingImageData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EJBindingImageData.h; sourceTree = "<group>"; };
+		A332C29D1961194300B55EA1 /* EJBindingImageData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EJBindingImageData.m; sourceTree = "<group>"; };
+		A332C29E1961194300B55EA1 /* EJBindingTextMetrics.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EJBindingTextMetrics.h; sourceTree = "<group>"; };
+		A332C29F1961194300B55EA1 /* EJBindingTextMetrics.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EJBindingTextMetrics.m; sourceTree = "<group>"; };
+		A332C2A01961194300B55EA1 /* EJCanvas2DTypes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EJCanvas2DTypes.h; sourceTree = "<group>"; };
+		A332C2A11961194300B55EA1 /* EJCanvasContext2D.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EJCanvasContext2D.h; sourceTree = "<group>"; };
+		A332C2A21961194300B55EA1 /* EJCanvasContext2D.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EJCanvasContext2D.m; sourceTree = "<group>"; };
+		A332C2A31961194300B55EA1 /* EJCanvasContext2DScreen.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EJCanvasContext2DScreen.h; sourceTree = "<group>"; };
+		A332C2A41961194300B55EA1 /* EJCanvasContext2DScreen.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EJCanvasContext2DScreen.m; sourceTree = "<group>"; };
+		A332C2A51961194300B55EA1 /* EJCanvasContext2DTexture.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EJCanvasContext2DTexture.h; sourceTree = "<group>"; };
+		A332C2A61961194300B55EA1 /* EJCanvasContext2DTexture.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EJCanvasContext2DTexture.m; sourceTree = "<group>"; };
+		A332C2A71961194300B55EA1 /* EJCanvasGradient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EJCanvasGradient.h; sourceTree = "<group>"; };
+		A332C2A81961194300B55EA1 /* EJCanvasGradient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EJCanvasGradient.m; sourceTree = "<group>"; };
+		A332C2A91961194300B55EA1 /* EJCanvasPattern.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EJCanvasPattern.h; sourceTree = "<group>"; };
+		A332C2AA1961194300B55EA1 /* EJCanvasPattern.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EJCanvasPattern.m; sourceTree = "<group>"; };
+		A332C2AB1961194300B55EA1 /* EJConvertColorRGBA.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EJConvertColorRGBA.h; sourceTree = "<group>"; };
+		A332C2AC1961194300B55EA1 /* EJConvertColorRGBA.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EJConvertColorRGBA.m; sourceTree = "<group>"; };
+		A332C2AD1961194300B55EA1 /* EJFont.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EJFont.h; sourceTree = "<group>"; };
+		A332C2AE1961194300B55EA1 /* EJFont.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = EJFont.mm; sourceTree = "<group>"; };
+		A332C2AF1961194300B55EA1 /* EJFontCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EJFontCache.h; sourceTree = "<group>"; };
+		A332C2B01961194300B55EA1 /* EJFontCache.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EJFontCache.m; sourceTree = "<group>"; };
+		A332C2B11961194300B55EA1 /* EJGLProgram2D.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EJGLProgram2D.h; sourceTree = "<group>"; };
+		A332C2B21961194300B55EA1 /* EJGLProgram2D.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EJGLProgram2D.m; sourceTree = "<group>"; };
+		A332C2B31961194300B55EA1 /* EJGLProgram2DRadialGradient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EJGLProgram2DRadialGradient.h; sourceTree = "<group>"; };
+		A332C2B41961194300B55EA1 /* EJGLProgram2DRadialGradient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EJGLProgram2DRadialGradient.m; sourceTree = "<group>"; };
+		A332C2B51961194300B55EA1 /* EJImageData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EJImageData.h; sourceTree = "<group>"; };
+		A332C2B61961194300B55EA1 /* EJImageData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EJImageData.m; sourceTree = "<group>"; };
+		A332C2B71961194300B55EA1 /* EJPath.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EJPath.h; sourceTree = "<group>"; };
+		A332C2B81961194300B55EA1 /* EJPath.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = EJPath.mm; sourceTree = "<group>"; };
+		A332C2BA1961194300B55EA1 /* AlphaTexture.fsh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = AlphaTexture.fsh; sourceTree = "<group>"; };
+		A332C2BB1961194300B55EA1 /* Flat.fsh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = Flat.fsh; sourceTree = "<group>"; };
+		A332C2BC1961194300B55EA1 /* Pattern.fsh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = Pattern.fsh; sourceTree = "<group>"; };
+		A332C2BD1961194300B55EA1 /* RadialGradient.fsh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = RadialGradient.fsh; sourceTree = "<group>"; };
+		A332C2BE1961194300B55EA1 /* Texture.fsh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = Texture.fsh; sourceTree = "<group>"; };
+		A332C2BF1961194300B55EA1 /* Vertex.vsh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = Vertex.vsh; sourceTree = "<group>"; };
+		A332C2C01961194300B55EA1 /* EAGLView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EAGLView.h; sourceTree = "<group>"; };
+		A332C2C11961194300B55EA1 /* EAGLView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EAGLView.m; sourceTree = "<group>"; };
+		A332C2C21961194300B55EA1 /* EJBindingCanvas.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EJBindingCanvas.h; sourceTree = "<group>"; };
+		A332C2C31961194300B55EA1 /* EJBindingCanvas.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EJBindingCanvas.m; sourceTree = "<group>"; };
+		A332C2C41961194300B55EA1 /* EJBindingCanvasStyle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EJBindingCanvasStyle.h; sourceTree = "<group>"; };
+		A332C2C51961194300B55EA1 /* EJBindingCanvasStyle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EJBindingCanvasStyle.m; sourceTree = "<group>"; };
+		A332C2C61961194300B55EA1 /* EJBindingImage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EJBindingImage.h; sourceTree = "<group>"; };
+		A332C2C71961194300B55EA1 /* EJBindingImage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EJBindingImage.m; sourceTree = "<group>"; };
+		A332C2C81961194300B55EA1 /* EJCanvasContext.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EJCanvasContext.h; sourceTree = "<group>"; };
+		A332C2C91961194300B55EA1 /* EJCanvasContext.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EJCanvasContext.m; sourceTree = "<group>"; };
+		A332C2CA1961194300B55EA1 /* EJDrawable.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EJDrawable.h; sourceTree = "<group>"; };
+		A332C2CB1961194300B55EA1 /* EJPresentable.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EJPresentable.h; sourceTree = "<group>"; };
+		A332C2CC1961194300B55EA1 /* EJSharedTextureCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EJSharedTextureCache.h; sourceTree = "<group>"; };
+		A332C2CD1961194300B55EA1 /* EJSharedTextureCache.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EJSharedTextureCache.m; sourceTree = "<group>"; };
+		A332C2CE1961194300B55EA1 /* EJTexture.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EJTexture.h; sourceTree = "<group>"; };
+		A332C2CF1961194300B55EA1 /* EJTexture.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EJTexture.m; sourceTree = "<group>"; };
+		A332C2D01961194300B55EA1 /* EJTextureStorage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EJTextureStorage.h; sourceTree = "<group>"; };
+		A332C2D11961194300B55EA1 /* EJTextureStorage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EJTextureStorage.m; sourceTree = "<group>"; };
+		A332C2D31961194300B55EA1 /* EJBindingCanvasContextWebGL.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EJBindingCanvasContextWebGL.h; sourceTree = "<group>"; };
+		A332C2D41961194300B55EA1 /* EJBindingCanvasContextWebGL.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EJBindingCanvasContextWebGL.m; sourceTree = "<group>"; };
+		A332C2D51961194300B55EA1 /* EJBindingWebGLExtensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EJBindingWebGLExtensions.h; sourceTree = "<group>"; };
+		A332C2D61961194300B55EA1 /* EJBindingWebGLExtensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EJBindingWebGLExtensions.m; sourceTree = "<group>"; };
+		A332C2D71961194300B55EA1 /* EJBindingWebGLObjects.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EJBindingWebGLObjects.h; sourceTree = "<group>"; };
+		A332C2D81961194300B55EA1 /* EJBindingWebGLObjects.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EJBindingWebGLObjects.m; sourceTree = "<group>"; };
+		A332C2D91961194300B55EA1 /* EJCanvasContextWebGL.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EJCanvasContextWebGL.h; sourceTree = "<group>"; };
+		A332C2DA1961194300B55EA1 /* EJCanvasContextWebGL.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EJCanvasContextWebGL.m; sourceTree = "<group>"; };
+		A332C2DB1961194300B55EA1 /* EJCanvasContextWebGLScreen.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EJCanvasContextWebGLScreen.h; sourceTree = "<group>"; };
+		A332C2DC1961194300B55EA1 /* EJCanvasContextWebGLScreen.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EJCanvasContextWebGLScreen.m; sourceTree = "<group>"; };
+		A332C2DD1961194300B55EA1 /* EJCanvasContextWebGLTexture.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EJCanvasContextWebGLTexture.h; sourceTree = "<group>"; };
+		A332C2DE1961194300B55EA1 /* EJCanvasContextWebGLTexture.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EJCanvasContextWebGLTexture.m; sourceTree = "<group>"; };
+		A332C2DF1961194300B55EA1 /* EJConvertWebGL.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EJConvertWebGL.h; sourceTree = "<group>"; };
+		A332C2E01961194300B55EA1 /* EJConvertWebGL.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EJConvertWebGL.m; sourceTree = "<group>"; };
+		A332C2E11961194300B55EA1 /* EJClassLoader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EJClassLoader.h; sourceTree = "<group>"; };
+		A332C2E21961194300B55EA1 /* EJClassLoader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EJClassLoader.m; sourceTree = "<group>"; };
+		A332C2E31961194300B55EA1 /* EJConvert.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EJConvert.h; sourceTree = "<group>"; };
+		A332C2E41961194300B55EA1 /* EJConvert.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EJConvert.m; sourceTree = "<group>"; };
+		A332C2E51961194300B55EA1 /* Ejecta.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = Ejecta.js; sourceTree = "<group>"; };
+		A332C2E61961194300B55EA1 /* EJJavaScriptView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EJJavaScriptView.h; sourceTree = "<group>"; };
+		A332C2E71961194300B55EA1 /* EJJavaScriptView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EJJavaScriptView.m; sourceTree = "<group>"; };
+		A332C2E81961194300B55EA1 /* EJNonRetainingProxy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EJNonRetainingProxy.h; sourceTree = "<group>"; };
+		A332C2E91961194300B55EA1 /* EJNonRetainingProxy.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EJNonRetainingProxy.m; sourceTree = "<group>"; };
+		A332C2EA1961194300B55EA1 /* EJSharedOpenGLContext.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EJSharedOpenGLContext.h; sourceTree = "<group>"; };
+		A332C2EB1961194300B55EA1 /* EJSharedOpenGLContext.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EJSharedOpenGLContext.m; sourceTree = "<group>"; };
+		A332C2EC1961194300B55EA1 /* EJTimer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EJTimer.h; sourceTree = "<group>"; };
+		A332C2ED1961194300B55EA1 /* EJTimer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EJTimer.m; sourceTree = "<group>"; };
+		A332C2EF1961194300B55EA1 /* EJBindingAdBanner.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EJBindingAdBanner.h; sourceTree = "<group>"; };
+		A332C2F01961194300B55EA1 /* EJBindingAdBanner.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EJBindingAdBanner.m; sourceTree = "<group>"; };
+		A332C2F11961194300B55EA1 /* EJBindingDeviceMotion.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EJBindingDeviceMotion.h; sourceTree = "<group>"; };
+		A332C2F21961194300B55EA1 /* EJBindingDeviceMotion.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EJBindingDeviceMotion.m; sourceTree = "<group>"; };
+		A332C2F31961194300B55EA1 /* EJBindingGameCenter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EJBindingGameCenter.h; sourceTree = "<group>"; };
+		A332C2F41961194300B55EA1 /* EJBindingGameCenter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EJBindingGameCenter.m; sourceTree = "<group>"; };
+		A332C2F51961194300B55EA1 /* EJBindingGeolocation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EJBindingGeolocation.h; sourceTree = "<group>"; };
+		A332C2F61961194300B55EA1 /* EJBindingGeolocation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EJBindingGeolocation.m; sourceTree = "<group>"; };
+		A332C2F71961194300B55EA1 /* EJBindingHttpRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EJBindingHttpRequest.h; sourceTree = "<group>"; };
+		A332C2F81961194300B55EA1 /* EJBindingHttpRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EJBindingHttpRequest.m; sourceTree = "<group>"; };
+		A332C2F91961194300B55EA1 /* EJBindingImagePicker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EJBindingImagePicker.h; sourceTree = "<group>"; };
+		A332C2FA1961194300B55EA1 /* EJBindingImagePicker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EJBindingImagePicker.m; sourceTree = "<group>"; };
+		A332C2FB1961194300B55EA1 /* EJBindingKeyInput.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EJBindingKeyInput.h; sourceTree = "<group>"; };
+		A332C2FC1961194300B55EA1 /* EJBindingKeyInput.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EJBindingKeyInput.m; sourceTree = "<group>"; };
+		A332C2FD1961194300B55EA1 /* EJBindingLocalStorage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EJBindingLocalStorage.h; sourceTree = "<group>"; };
+		A332C2FE1961194300B55EA1 /* EJBindingLocalStorage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EJBindingLocalStorage.m; sourceTree = "<group>"; };
+		A332C2FF1961194300B55EA1 /* EJBindingTouchInput.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EJBindingTouchInput.h; sourceTree = "<group>"; };
+		A332C3001961194300B55EA1 /* EJBindingTouchInput.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EJBindingTouchInput.m; sourceTree = "<group>"; };
+		A332C3011961194300B55EA1 /* EJBindingWebSocket.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EJBindingWebSocket.h; sourceTree = "<group>"; };
+		A332C3021961194300B55EA1 /* EJBindingWebSocket.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EJBindingWebSocket.m; sourceTree = "<group>"; };
+		A332C3031961194300B55EA1 /* EJBindingWindowEvents.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EJBindingWindowEvents.h; sourceTree = "<group>"; };
+		A332C3041961194300B55EA1 /* EJBindingWindowEvents.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EJBindingWindowEvents.m; sourceTree = "<group>"; };
+		A332C3061961194300B55EA1 /* EJBindingIAPManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EJBindingIAPManager.h; sourceTree = "<group>"; };
+		A332C3071961194300B55EA1 /* EJBindingIAPManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EJBindingIAPManager.m; sourceTree = "<group>"; };
+		A332C3081961194300B55EA1 /* EJBindingIAPProduct.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EJBindingIAPProduct.h; sourceTree = "<group>"; };
+		A332C3091961194300B55EA1 /* EJBindingIAPProduct.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EJBindingIAPProduct.m; sourceTree = "<group>"; };
+		A332C30A1961194300B55EA1 /* EJBindingIAPTransaction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EJBindingIAPTransaction.h; sourceTree = "<group>"; };
+		A332C30B1961194300B55EA1 /* EJBindingIAPTransaction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EJBindingIAPTransaction.m; sourceTree = "<group>"; };
+		A332C30D1961194300B55EA1 /* base64.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = base64.c; sourceTree = "<group>"; };
+		A332C30E1961194300B55EA1 /* base64.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = base64.h; sourceTree = "<group>"; };
+		A332C3111961194300B55EA1 /* SocketRocket-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "SocketRocket-Prefix.pch"; sourceTree = "<group>"; };
+		A332C3121961194300B55EA1 /* SRWebSocket.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SRWebSocket.h; sourceTree = "<group>"; };
+		A332C3131961194300B55EA1 /* SRWebSocket.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SRWebSocket.m; sourceTree = "<group>"; };
+		A332C35B196119D600B55EA1 /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
+		A332C35D196119DC00B55EA1 /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		A332C24E1961191700B55EA1 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A332C35E196119DC00B55EA1 /* JavaScriptCore.framework in Frameworks */,
+				A332C35C196119D600B55EA1 /* OpenGLES.framework in Frameworks */,
+				A332C2551961191700B55EA1 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A332C25E1961191700B55EA1 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A332C2631961191700B55EA1 /* XCTest.framework in Frameworks */,
+				A332C2661961191700B55EA1 /* UIKit.framework in Frameworks */,
+				A332C2641961191700B55EA1 /* Foundation.framework in Frameworks */,
+				A332C2691961191700B55EA1 /* liblibEjecta.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		A332C2481961191700B55EA1 = {
+			isa = PBXGroup;
+			children = (
+				A332C2561961191700B55EA1 /* libEjecta */,
+				A332C2531961191700B55EA1 /* Frameworks */,
+				A332C2521961191700B55EA1 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		A332C2521961191700B55EA1 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				A332C2511961191700B55EA1 /* liblibEjecta.a */,
+				A332C2611961191700B55EA1 /* libEjectaTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		A332C2531961191700B55EA1 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				A332C35D196119DC00B55EA1 /* JavaScriptCore.framework */,
+				A332C35B196119D600B55EA1 /* OpenGLES.framework */,
+				A332C2541961191700B55EA1 /* Foundation.framework */,
+				A332C2621961191700B55EA1 /* XCTest.framework */,
+				A332C2651961191700B55EA1 /* UIKit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		A332C2561961191700B55EA1 /* libEjecta */ = {
+			isa = PBXGroup;
+			children = (
+				A332C27A1961194300B55EA1 /* Source */,
+				A332C2571961191700B55EA1 /* Supporting Files */,
+			);
+			path = libEjecta;
+			sourceTree = "<group>";
+		};
+		A332C2571961191700B55EA1 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				A332C2581961191700B55EA1 /* libEjecta-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		A332C27A1961194300B55EA1 /* Source */ = {
+			isa = PBXGroup;
+			children = (
+				A332C27D1961194300B55EA1 /* Ejecta */,
+				A332C30C1961194300B55EA1 /* lib */,
+			);
+			name = Source;
+			path = ../../Source;
+			sourceTree = "<group>";
+		};
+		A332C27D1961194300B55EA1 /* Ejecta */ = {
+			isa = PBXGroup;
+			children = (
+				A332C27E1961194300B55EA1 /* EJAppViewController.h */,
+				A332C27F1961194300B55EA1 /* EJAppViewController.m */,
+				A332C2801961194300B55EA1 /* EJAudio */,
+				A332C28C1961194300B55EA1 /* EJBindingBase.h */,
+				A332C28D1961194300B55EA1 /* EJBindingBase.m */,
+				A332C28E1961194300B55EA1 /* EJBindingEjectaCore.h */,
+				A332C28F1961194300B55EA1 /* EJBindingEjectaCore.m */,
+				A332C2901961194300B55EA1 /* EJBindingEventedBase.h */,
+				A332C2911961194300B55EA1 /* EJBindingEventedBase.m */,
+				A332C2921961194300B55EA1 /* EJBindingVideo.h */,
+				A332C2931961194300B55EA1 /* EJBindingVideo.m */,
+				A332C2941961194300B55EA1 /* EJCanvas */,
+				A332C2E11961194300B55EA1 /* EJClassLoader.h */,
+				A332C2E21961194300B55EA1 /* EJClassLoader.m */,
+				A332C2E31961194300B55EA1 /* EJConvert.h */,
+				A332C2E41961194300B55EA1 /* EJConvert.m */,
+				A332C2E51961194300B55EA1 /* Ejecta.js */,
+				A332C2E61961194300B55EA1 /* EJJavaScriptView.h */,
+				A332C2E71961194300B55EA1 /* EJJavaScriptView.m */,
+				A332C2E81961194300B55EA1 /* EJNonRetainingProxy.h */,
+				A332C2E91961194300B55EA1 /* EJNonRetainingProxy.m */,
+				A332C2EA1961194300B55EA1 /* EJSharedOpenGLContext.h */,
+				A332C2EB1961194300B55EA1 /* EJSharedOpenGLContext.m */,
+				A332C2EC1961194300B55EA1 /* EJTimer.h */,
+				A332C2ED1961194300B55EA1 /* EJTimer.m */,
+				A332C2EE1961194300B55EA1 /* EJUtils */,
+			);
+			path = Ejecta;
+			sourceTree = "<group>";
+		};
+		A332C2801961194300B55EA1 /* EJAudio */ = {
+			isa = PBXGroup;
+			children = (
+				A332C2811961194300B55EA1 /* EJAudioSource.h */,
+				A332C2821961194300B55EA1 /* EJAudioSourceAVAudio.h */,
+				A332C2831961194300B55EA1 /* EJAudioSourceAVAudio.m */,
+				A332C2841961194300B55EA1 /* EJAudioSourceOpenAL.h */,
+				A332C2851961194300B55EA1 /* EJAudioSourceOpenAL.m */,
+				A332C2861961194300B55EA1 /* EJBindingAudio.h */,
+				A332C2871961194300B55EA1 /* EJBindingAudio.m */,
+				A332C2881961194300B55EA1 /* EJOpenALBuffer.h */,
+				A332C2891961194300B55EA1 /* EJOpenALBuffer.m */,
+				A332C28A1961194300B55EA1 /* EJSharedOpenALManager.h */,
+				A332C28B1961194300B55EA1 /* EJSharedOpenALManager.m */,
+			);
+			path = EJAudio;
+			sourceTree = "<group>";
+		};
+		A332C2941961194300B55EA1 /* EJCanvas */ = {
+			isa = PBXGroup;
+			children = (
+				A332C2951961194300B55EA1 /* 2D */,
+				A332C2C01961194300B55EA1 /* EAGLView.h */,
+				A332C2C11961194300B55EA1 /* EAGLView.m */,
+				A332C2C21961194300B55EA1 /* EJBindingCanvas.h */,
+				A332C2C31961194300B55EA1 /* EJBindingCanvas.m */,
+				A332C2C41961194300B55EA1 /* EJBindingCanvasStyle.h */,
+				A332C2C51961194300B55EA1 /* EJBindingCanvasStyle.m */,
+				A332C2C61961194300B55EA1 /* EJBindingImage.h */,
+				A332C2C71961194300B55EA1 /* EJBindingImage.m */,
+				A332C2C81961194300B55EA1 /* EJCanvasContext.h */,
+				A332C2C91961194300B55EA1 /* EJCanvasContext.m */,
+				A332C2CA1961194300B55EA1 /* EJDrawable.h */,
+				A332C2CB1961194300B55EA1 /* EJPresentable.h */,
+				A332C2CC1961194300B55EA1 /* EJSharedTextureCache.h */,
+				A332C2CD1961194300B55EA1 /* EJSharedTextureCache.m */,
+				A332C2CE1961194300B55EA1 /* EJTexture.h */,
+				A332C2CF1961194300B55EA1 /* EJTexture.m */,
+				A332C2D01961194300B55EA1 /* EJTextureStorage.h */,
+				A332C2D11961194300B55EA1 /* EJTextureStorage.m */,
+				A332C2D21961194300B55EA1 /* WebGL */,
+			);
+			path = EJCanvas;
+			sourceTree = "<group>";
+		};
+		A332C2951961194300B55EA1 /* 2D */ = {
+			isa = PBXGroup;
+			children = (
+				A332C2961961194300B55EA1 /* EJBindingCanvasContext2D.h */,
+				A332C2971961194300B55EA1 /* EJBindingCanvasContext2D.m */,
+				A332C2981961194300B55EA1 /* EJBindingCanvasGradient.h */,
+				A332C2991961194300B55EA1 /* EJBindingCanvasGradient.m */,
+				A332C29A1961194300B55EA1 /* EJBindingCanvasPattern.h */,
+				A332C29B1961194300B55EA1 /* EJBindingCanvasPattern.m */,
+				A332C29C1961194300B55EA1 /* EJBindingImageData.h */,
+				A332C29D1961194300B55EA1 /* EJBindingImageData.m */,
+				A332C29E1961194300B55EA1 /* EJBindingTextMetrics.h */,
+				A332C29F1961194300B55EA1 /* EJBindingTextMetrics.m */,
+				A332C2A01961194300B55EA1 /* EJCanvas2DTypes.h */,
+				A332C2A11961194300B55EA1 /* EJCanvasContext2D.h */,
+				A332C2A21961194300B55EA1 /* EJCanvasContext2D.m */,
+				A332C2A31961194300B55EA1 /* EJCanvasContext2DScreen.h */,
+				A332C2A41961194300B55EA1 /* EJCanvasContext2DScreen.m */,
+				A332C2A51961194300B55EA1 /* EJCanvasContext2DTexture.h */,
+				A332C2A61961194300B55EA1 /* EJCanvasContext2DTexture.m */,
+				A332C2A71961194300B55EA1 /* EJCanvasGradient.h */,
+				A332C2A81961194300B55EA1 /* EJCanvasGradient.m */,
+				A332C2A91961194300B55EA1 /* EJCanvasPattern.h */,
+				A332C2AA1961194300B55EA1 /* EJCanvasPattern.m */,
+				A332C2AB1961194300B55EA1 /* EJConvertColorRGBA.h */,
+				A332C2AC1961194300B55EA1 /* EJConvertColorRGBA.m */,
+				A332C2AD1961194300B55EA1 /* EJFont.h */,
+				A332C2AE1961194300B55EA1 /* EJFont.mm */,
+				A332C2AF1961194300B55EA1 /* EJFontCache.h */,
+				A332C2B01961194300B55EA1 /* EJFontCache.m */,
+				A332C2B11961194300B55EA1 /* EJGLProgram2D.h */,
+				A332C2B21961194300B55EA1 /* EJGLProgram2D.m */,
+				A332C2B31961194300B55EA1 /* EJGLProgram2DRadialGradient.h */,
+				A332C2B41961194300B55EA1 /* EJGLProgram2DRadialGradient.m */,
+				A332C2B51961194300B55EA1 /* EJImageData.h */,
+				A332C2B61961194300B55EA1 /* EJImageData.m */,
+				A332C2B71961194300B55EA1 /* EJPath.h */,
+				A332C2B81961194300B55EA1 /* EJPath.mm */,
+				A332C2B91961194300B55EA1 /* Shaders */,
+			);
+			path = 2D;
+			sourceTree = "<group>";
+		};
+		A332C2B91961194300B55EA1 /* Shaders */ = {
+			isa = PBXGroup;
+			children = (
+				A332C2BA1961194300B55EA1 /* AlphaTexture.fsh */,
+				A332C2BB1961194300B55EA1 /* Flat.fsh */,
+				A332C2BC1961194300B55EA1 /* Pattern.fsh */,
+				A332C2BD1961194300B55EA1 /* RadialGradient.fsh */,
+				A332C2BE1961194300B55EA1 /* Texture.fsh */,
+				A332C2BF1961194300B55EA1 /* Vertex.vsh */,
+			);
+			path = Shaders;
+			sourceTree = "<group>";
+		};
+		A332C2D21961194300B55EA1 /* WebGL */ = {
+			isa = PBXGroup;
+			children = (
+				A332C2D31961194300B55EA1 /* EJBindingCanvasContextWebGL.h */,
+				A332C2D41961194300B55EA1 /* EJBindingCanvasContextWebGL.m */,
+				A332C2D51961194300B55EA1 /* EJBindingWebGLExtensions.h */,
+				A332C2D61961194300B55EA1 /* EJBindingWebGLExtensions.m */,
+				A332C2D71961194300B55EA1 /* EJBindingWebGLObjects.h */,
+				A332C2D81961194300B55EA1 /* EJBindingWebGLObjects.m */,
+				A332C2D91961194300B55EA1 /* EJCanvasContextWebGL.h */,
+				A332C2DA1961194300B55EA1 /* EJCanvasContextWebGL.m */,
+				A332C2DB1961194300B55EA1 /* EJCanvasContextWebGLScreen.h */,
+				A332C2DC1961194300B55EA1 /* EJCanvasContextWebGLScreen.m */,
+				A332C2DD1961194300B55EA1 /* EJCanvasContextWebGLTexture.h */,
+				A332C2DE1961194300B55EA1 /* EJCanvasContextWebGLTexture.m */,
+				A332C2DF1961194300B55EA1 /* EJConvertWebGL.h */,
+				A332C2E01961194300B55EA1 /* EJConvertWebGL.m */,
+			);
+			path = WebGL;
+			sourceTree = "<group>";
+		};
+		A332C2EE1961194300B55EA1 /* EJUtils */ = {
+			isa = PBXGroup;
+			children = (
+				A332C2EF1961194300B55EA1 /* EJBindingAdBanner.h */,
+				A332C2F01961194300B55EA1 /* EJBindingAdBanner.m */,
+				A332C2F11961194300B55EA1 /* EJBindingDeviceMotion.h */,
+				A332C2F21961194300B55EA1 /* EJBindingDeviceMotion.m */,
+				A332C2F31961194300B55EA1 /* EJBindingGameCenter.h */,
+				A332C2F41961194300B55EA1 /* EJBindingGameCenter.m */,
+				A332C2F51961194300B55EA1 /* EJBindingGeolocation.h */,
+				A332C2F61961194300B55EA1 /* EJBindingGeolocation.m */,
+				A332C2F71961194300B55EA1 /* EJBindingHttpRequest.h */,
+				A332C2F81961194300B55EA1 /* EJBindingHttpRequest.m */,
+				A332C2F91961194300B55EA1 /* EJBindingImagePicker.h */,
+				A332C2FA1961194300B55EA1 /* EJBindingImagePicker.m */,
+				A332C2FB1961194300B55EA1 /* EJBindingKeyInput.h */,
+				A332C2FC1961194300B55EA1 /* EJBindingKeyInput.m */,
+				A332C2FD1961194300B55EA1 /* EJBindingLocalStorage.h */,
+				A332C2FE1961194300B55EA1 /* EJBindingLocalStorage.m */,
+				A332C2FF1961194300B55EA1 /* EJBindingTouchInput.h */,
+				A332C3001961194300B55EA1 /* EJBindingTouchInput.m */,
+				A332C3011961194300B55EA1 /* EJBindingWebSocket.h */,
+				A332C3021961194300B55EA1 /* EJBindingWebSocket.m */,
+				A332C3031961194300B55EA1 /* EJBindingWindowEvents.h */,
+				A332C3041961194300B55EA1 /* EJBindingWindowEvents.m */,
+				A332C3051961194300B55EA1 /* IAP */,
+			);
+			path = EJUtils;
+			sourceTree = "<group>";
+		};
+		A332C3051961194300B55EA1 /* IAP */ = {
+			isa = PBXGroup;
+			children = (
+				A332C3061961194300B55EA1 /* EJBindingIAPManager.h */,
+				A332C3071961194300B55EA1 /* EJBindingIAPManager.m */,
+				A332C3081961194300B55EA1 /* EJBindingIAPProduct.h */,
+				A332C3091961194300B55EA1 /* EJBindingIAPProduct.m */,
+				A332C30A1961194300B55EA1 /* EJBindingIAPTransaction.h */,
+				A332C30B1961194300B55EA1 /* EJBindingIAPTransaction.m */,
+			);
+			path = IAP;
+			sourceTree = "<group>";
+		};
+		A332C30C1961194300B55EA1 /* lib */ = {
+			isa = PBXGroup;
+			children = (
+				A332C30D1961194300B55EA1 /* base64.c */,
+				A332C30E1961194300B55EA1 /* base64.h */,
+				A332C3101961194300B55EA1 /* SocketRocket */,
+			);
+			path = lib;
+			sourceTree = "<group>";
+		};
+		A332C3101961194300B55EA1 /* SocketRocket */ = {
+			isa = PBXGroup;
+			children = (
+				A332C3111961194300B55EA1 /* SocketRocket-Prefix.pch */,
+				A332C3121961194300B55EA1 /* SRWebSocket.h */,
+				A332C3131961194300B55EA1 /* SRWebSocket.m */,
+			);
+			path = SocketRocket;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		A332C2501961191700B55EA1 /* libEjecta */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A332C2741961191700B55EA1 /* Build configuration list for PBXNativeTarget "libEjecta" */;
+			buildPhases = (
+				A332C24D1961191700B55EA1 /* Sources */,
+				A332C24E1961191700B55EA1 /* Frameworks */,
+				A332C24F1961191700B55EA1 /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = libEjecta;
+			productName = libEjecta;
+			productReference = A332C2511961191700B55EA1 /* liblibEjecta.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+		A332C2601961191700B55EA1 /* libEjectaTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A332C2771961191700B55EA1 /* Build configuration list for PBXNativeTarget "libEjectaTests" */;
+			buildPhases = (
+				A332C25D1961191700B55EA1 /* Sources */,
+				A332C25E1961191700B55EA1 /* Frameworks */,
+				A332C25F1961191700B55EA1 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				A332C2681961191700B55EA1 /* PBXTargetDependency */,
+			);
+			name = libEjectaTests;
+			productName = libEjectaTests;
+			productReference = A332C2611961191700B55EA1 /* libEjectaTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		A332C2491961191700B55EA1 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0510;
+				ORGANIZATIONNAME = "Trompo Games Inc.";
+			};
+			buildConfigurationList = A332C24C1961191700B55EA1 /* Build configuration list for PBXProject "libEjecta" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = A332C2481961191700B55EA1;
+			productRefGroup = A332C2521961191700B55EA1 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				A332C2501961191700B55EA1 /* libEjecta */,
+				A332C2601961191700B55EA1 /* libEjectaTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		A332C25F1961191700B55EA1 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		A332C24D1961191700B55EA1 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A332C3181961194300B55EA1 /* EJAudioSourceAVAudio.m in Sources */,
+				A332C3361961194300B55EA1 /* EJCanvasContext.m in Sources */,
+				A332C3411961194300B55EA1 /* EJClassLoader.m in Sources */,
+				A332C33F1961194300B55EA1 /* EJCanvasContextWebGLTexture.m in Sources */,
+				A332C3311961194300B55EA1 /* EJPath.mm in Sources */,
+				A332C32A1961194300B55EA1 /* EJCanvasPattern.m in Sources */,
+				A332C3371961194300B55EA1 /* EJSharedTextureCache.m in Sources */,
+				A332C34E1961194300B55EA1 /* EJBindingKeyInput.m in Sources */,
+				A332C3191961194300B55EA1 /* EJAudioSourceOpenAL.m in Sources */,
+				A332C3381961194300B55EA1 /* EJTexture.m in Sources */,
+				A332C3561961194300B55EA1 /* base64.c in Sources */,
+				A332C3281961194300B55EA1 /* EJCanvasContext2DTexture.m in Sources */,
+				A332C3401961194300B55EA1 /* EJConvertWebGL.m in Sources */,
+				A332C3511961194300B55EA1 /* EJBindingWebSocket.m in Sources */,
+				A332C3501961194300B55EA1 /* EJBindingTouchInput.m in Sources */,
+				A332C33E1961194300B55EA1 /* EJCanvasContextWebGLScreen.m in Sources */,
+				A332C3171961194300B55EA1 /* EJAppViewController.m in Sources */,
+				A332C3421961194300B55EA1 /* EJConvert.m in Sources */,
+				A332C3301961194300B55EA1 /* EJImageData.m in Sources */,
+				A332C3221961194300B55EA1 /* EJBindingCanvasGradient.m in Sources */,
+				A332C31A1961194300B55EA1 /* EJBindingAudio.m in Sources */,
+				A332C3491961194300B55EA1 /* EJBindingDeviceMotion.m in Sources */,
+				A332C3541961194300B55EA1 /* EJBindingIAPProduct.m in Sources */,
+				A332C32B1961194300B55EA1 /* EJConvertColorRGBA.m in Sources */,
+				A332C32F1961194300B55EA1 /* EJGLProgram2DRadialGradient.m in Sources */,
+				A332C34F1961194300B55EA1 /* EJBindingLocalStorage.m in Sources */,
+				A332C3341961194300B55EA1 /* EJBindingCanvasStyle.m in Sources */,
+				A332C3521961194300B55EA1 /* EJBindingWindowEvents.m in Sources */,
+				A332C32C1961194300B55EA1 /* EJFont.mm in Sources */,
+				A332C32D1961194300B55EA1 /* EJFontCache.m in Sources */,
+				A332C3551961194300B55EA1 /* EJBindingIAPTransaction.m in Sources */,
+				A332C33D1961194300B55EA1 /* EJCanvasContextWebGL.m in Sources */,
+				A332C33B1961194300B55EA1 /* EJBindingWebGLExtensions.m in Sources */,
+				A332C33C1961194300B55EA1 /* EJBindingWebGLObjects.m in Sources */,
+				A332C3441961194300B55EA1 /* EJJavaScriptView.m in Sources */,
+				A332C34D1961194300B55EA1 /* EJBindingImagePicker.m in Sources */,
+				A332C31C1961194300B55EA1 /* EJSharedOpenALManager.m in Sources */,
+				A332C3251961194300B55EA1 /* EJBindingTextMetrics.m in Sources */,
+				A332C3451961194300B55EA1 /* EJNonRetainingProxy.m in Sources */,
+				A332C3331961194300B55EA1 /* EJBindingCanvas.m in Sources */,
+				A332C3261961194300B55EA1 /* EJCanvasContext2D.m in Sources */,
+				A332C34B1961194300B55EA1 /* EJBindingGeolocation.m in Sources */,
+				A332C3231961194300B55EA1 /* EJBindingCanvasPattern.m in Sources */,
+				A332C3271961194300B55EA1 /* EJCanvasContext2DScreen.m in Sources */,
+				A332C3321961194300B55EA1 /* EAGLView.m in Sources */,
+				A332C3461961194300B55EA1 /* EJSharedOpenGLContext.m in Sources */,
+				A332C3241961194300B55EA1 /* EJBindingImageData.m in Sources */,
+				A332C34C1961194300B55EA1 /* EJBindingHttpRequest.m in Sources */,
+				A332C3391961194300B55EA1 /* EJTextureStorage.m in Sources */,
+				A332C31E1961194300B55EA1 /* EJBindingEjectaCore.m in Sources */,
+				A332C3351961194300B55EA1 /* EJBindingImage.m in Sources */,
+				A332C3291961194300B55EA1 /* EJCanvasGradient.m in Sources */,
+				A332C3201961194300B55EA1 /* EJBindingVideo.m in Sources */,
+				A332C3471961194300B55EA1 /* EJTimer.m in Sources */,
+				A332C31B1961194300B55EA1 /* EJOpenALBuffer.m in Sources */,
+				A332C3531961194300B55EA1 /* EJBindingIAPManager.m in Sources */,
+				A332C31D1961194300B55EA1 /* EJBindingBase.m in Sources */,
+				A332C3211961194300B55EA1 /* EJBindingCanvasContext2D.m in Sources */,
+				A332C3581961194300B55EA1 /* SRWebSocket.m in Sources */,
+				A332C34A1961194300B55EA1 /* EJBindingGameCenter.m in Sources */,
+				A332C32E1961194300B55EA1 /* EJGLProgram2D.m in Sources */,
+				A332C33A1961194300B55EA1 /* EJBindingCanvasContextWebGL.m in Sources */,
+				A332C3481961194300B55EA1 /* EJBindingAdBanner.m in Sources */,
+				A332C31F1961194300B55EA1 /* EJBindingEventedBase.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A332C25D1961191700B55EA1 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		A332C2681961191700B55EA1 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = A332C2501961191700B55EA1 /* libEjecta */;
+			targetProxy = A332C2671961191700B55EA1 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		A332C2721961191700B55EA1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		A332C2731961191700B55EA1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		A332C2751961191700B55EA1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_OBJC_ARC = NO;
+				DSTROOT = /tmp/libEjecta.dst;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					/Users/dario/Documents/Trompo/P2Platform/LIBS/Ejecta/Source/lib,
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "libEjecta/libEjecta-Prefix.pch";
+				GCC_WARN_UNDECLARED_SELECTOR = NO;
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		A332C2761961191700B55EA1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_OBJC_ARC = NO;
+				DSTROOT = /tmp/libEjecta.dst;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					/Users/dario/Documents/Trompo/P2Platform/LIBS/Ejecta/Source/lib,
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "libEjecta/libEjecta-Prefix.pch";
+				GCC_WARN_UNDECLARED_SELECTOR = NO;
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
+		A332C2781961191700B55EA1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "libEjecta/libEjecta-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "libEjectaTests/libEjectaTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Debug;
+		};
+		A332C2791961191700B55EA1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "libEjecta/libEjecta-Prefix.pch";
+				INFOPLIST_FILE = "libEjectaTests/libEjectaTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		A332C24C1961191700B55EA1 /* Build configuration list for PBXProject "libEjecta" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A332C2721961191700B55EA1 /* Debug */,
+				A332C2731961191700B55EA1 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		A332C2741961191700B55EA1 /* Build configuration list for PBXNativeTarget "libEjecta" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A332C2751961191700B55EA1 /* Debug */,
+				A332C2761961191700B55EA1 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		A332C2771961191700B55EA1 /* Build configuration list for PBXNativeTarget "libEjectaTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A332C2781961191700B55EA1 /* Debug */,
+				A332C2791961191700B55EA1 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = A332C2491961191700B55EA1 /* Project object */;
+}

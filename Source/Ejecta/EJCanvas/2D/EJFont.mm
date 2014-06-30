@@ -1,7 +1,7 @@
 #import "EJFont.h"
 #import "EJCanvasContext2D.h"
 #include <malloc/malloc.h>
-#include <ext/hash_map>
+#include <unordered_map>
 
 
 @implementation EJFontDescriptor
@@ -74,7 +74,7 @@ int EJFontGlyphLayoutSortByTextureIndex(const void *a, const void *b) {
 
 @interface EJFont () {
 	// Glyph information
-	__gnu_cxx::hash_map<int, EJFontGlyphInfo> glyphInfoMap;
+    std::unordered_map<int, EJFontGlyphInfo> glyphInfoMap;
 }
 @end
 
@@ -284,7 +284,7 @@ int EJFontGlyphLayoutSortByTextureIndex(const void *a, const void *b) {
 	// descending characters or not.
 	// So, we have to collect those infos ourselfs from the glyphs.
 	EJTextMetrics metrics = {
-		.width = CTLineGetTypographicBounds(line, NULL, NULL, NULL),
+		.width = (float)CTLineGetTypographicBounds(line, NULL, NULL, NULL),
 		.ascent = 0,
 		.descent = 0,
 	};

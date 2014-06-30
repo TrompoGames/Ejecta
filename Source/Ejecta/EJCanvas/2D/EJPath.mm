@@ -519,7 +519,7 @@ typedef std::vector<subpath_t> path_t;
 
 - (void)drawLinesToContext:(EJCanvasContext2D *)context {
 	EJCanvasState *state = context.state;
-	GLubyte stencilMask;
+	GLubyte stencilMask = 0;
 	
 	// Find the width of the line as it is projected onto the screen.
 	float projectedLineWidth = CGAffineTransformGetScale( state->transform ) * state->lineWidth;
