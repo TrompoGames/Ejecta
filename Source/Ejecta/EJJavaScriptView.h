@@ -11,9 +11,9 @@
 #import "EJNonRetainingProxy.h"
 
 #define EJECTA_VERSION @"1.5"
-#define EJECTA_DEFAULT_APP_FOLDER @"App/"
+#define EJECTA_DEFAULT_APP_FOLDER ([[NSBundle mainBundle] objectForInfoDictionaryKey:@"EJAppFolder"] ? [[NSBundle mainBundle] objectForInfoDictionaryKey:@"EJAppFolder"] : @"App/")
 
-#define EJECTA_BOOT_JS @"../Ejecta.js"
+#define EJECTA_BOOT_JS ([[NSBundle mainBundle] objectForInfoDictionaryKey:@"EJBootJS"] ? [[NSBundle mainBundle] objectForInfoDictionaryKey:@"EJBootJS"] : @"../Ejecta.js")
 
 
 @protocol EJTouchDelegate
