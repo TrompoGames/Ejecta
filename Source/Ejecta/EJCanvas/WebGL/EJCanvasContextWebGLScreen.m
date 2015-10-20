@@ -1,4 +1,6 @@
 #import "EJCanvasContextWebGLScreen.h"
+#import "EJJavaScriptView.h"
+#import "EJTexture.h"
 
 @implementation EJCanvasContextWebGLScreen
 @synthesize style;
@@ -16,7 +18,12 @@
 	) {
 		// Must resize
 		style = newStyle;
-		[self resizeToWidth:width height:height];
+		
+		// Only resize if we already have a viewFrameBuffer. Otherwise the style
+		// will be honored in the 'create' call.
+		if( viewFrameBuffer ) {
+			[self resizeToWidth:width height:height];
+		}
 	}
 	else {
 		// Just reposition
@@ -106,6 +113,20 @@
 	[glContext presentRenderbuffer:GL_RENDERBUFFER];
 	glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT | GL_STENCIL_BUFFER_BIT);
 	needsPresenting = NO;
+}
+
+- (EJTexture *)texture {
+	EJCanvasContext *previousContext = scriptView.currentRenderingContext;
+	scriptView.currentRenderingContext = self;
+
+	NSMutableData *pixels = [NSMutableData dataWithLength:bufferWidth * bufferHeight * 4 * sizeof(GLubyte)];
+	glReadPixels(0, 0, bufferWidth, bufferHeight, GL_RGBA, GL_UNSIGNED_BYTE, pixels.mutableBytes);
+	
+	EJTexture *texture = [[[EJTexture alloc] initWithWidth:bufferWidth height:bufferHeight pixels:pixels] autorelease];
+	texture.contentScale = backingStoreRatio;
+
+	scriptView.currentRenderingContext = previousContext;
+	return texture;
 }
 
 @end

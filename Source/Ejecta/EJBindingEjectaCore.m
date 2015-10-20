@@ -38,12 +38,6 @@
 	}
 }
 
-- (void)dealloc {
-	[urlToOpen release];
-	JSValueUnprotectSafe(scriptView.jsGlobalContext, getTextCallback);
-	[super dealloc];
-}
-
 EJ_BIND_FUNCTION(log, ctx, argc, argv ) {
 	if( argc < 1 ) return NULL;
     
@@ -54,7 +48,7 @@ EJ_BIND_FUNCTION(log, ctx, argc, argv ) {
 EJ_BIND_FUNCTION(load, ctx, argc, argv ) {
 	if( argc < 1 ) return NULL;
 	
-	NSObject<UIApplicationDelegate> *app = [[UIApplication sharedApplication] delegate];
+	NSObject<UIApplicationDelegate> *app = UIApplication.sharedApplication.delegate;
 	if( [app respondsToSelector:@selector(loadViewControllerWithScriptAtPath:)] ) {
 		// Queue up the loading till the next frame; the script view may be in the
 		// midst of a timer update
@@ -95,17 +89,24 @@ EJ_BIND_FUNCTION(openURL, ctx, argc, argv ) {
 	
 	NSString *url = JSValueToNSString( ctx, argv[0] );
 	if( argc == 2 ) {
-		[urlToOpen release];
-		urlToOpen = [url retain];
-		
 		NSString *confirm = JSValueToNSString( ctx, argv[1] );
-		UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Open Browser?" message:confirm delegate:self cancelButtonTitle:@"Cancel" otherButtonTitles:@"Ok", nil];
-		alert.tag = kEJCoreAlertViewOpenURL;
-		[alert show];
-		[alert release];
+		UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Open Browser?"
+			message:confirm preferredStyle:UIAlertControllerStyleAlert];
+		
+		UIAlertAction *ok = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault
+			handler:^(UIAlertAction * action) {
+				[UIApplication.sharedApplication openURL:[NSURL URLWithString:url]];
+			}];
+		UIAlertAction *cancel = [UIAlertAction actionWithTitle:@"Cancel" style:UIAlertActionStyleCancel
+			handler:^(UIAlertAction * action) {}];
+		
+		[alert addAction:ok];
+		[alert addAction:cancel];
+		
+		[self.scriptView.window.rootViewController presentViewController:alert animated:YES completion:nil];
 	}
 	else {
-		[[UIApplication sharedApplication] openURL:[NSURL URLWithString: url]];
+		[UIApplication.sharedApplication openURL:[NSURL URLWithString: url]];
 	}
 	return NULL;
 }
@@ -116,41 +117,32 @@ EJ_BIND_FUNCTION(getText, ctx, argc, argv) {
 	NSString *title = JSValueToNSString(ctx, argv[0]);
 	NSString *message = JSValueToNSString(ctx, argv[1]);
 	
-	JSValueUnprotectSafe(ctx, getTextCallback);
-	getTextCallback = JSValueToObject(ctx, argv[2], NULL);
+	JSObjectRef getTextCallback = JSValueToObject(ctx, argv[2], NULL);
 	JSValueProtect(ctx, getTextCallback);
 	
-	UIAlertView *alert = [[UIAlertView alloc] initWithTitle:title message:message delegate:self
-		cancelButtonTitle:@"Cancel" otherButtonTitles:@"Ok", nil];
-	alert.alertViewStyle = UIAlertViewStylePlainTextInput;
-	alert.tag = kEJCoreAlertViewGetText;
-	[alert show];
-	[alert release];
+	UIAlertController *alert = [UIAlertController alertControllerWithTitle:title
+		message:message preferredStyle:UIAlertControllerStyleAlert];
+	
+	UIAlertAction *ok = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault
+		handler:^(UIAlertAction * action) {
+			JSValueRef params[] = { NSStringToJSValue(scriptView.jsGlobalContext, alert.textFields[0].text) };
+			[scriptView invokeCallback:getTextCallback thisObject:NULL argc:1 argv:params];
+			JSValueUnprotectSafe(scriptView.jsGlobalContext, getTextCallback);
+		}];
+	
+	UIAlertAction *cancel = [UIAlertAction actionWithTitle:@"Cancel" style:UIAlertActionStyleCancel
+		handler:^(UIAlertAction * action) {
+			[scriptView invokeCallback:getTextCallback thisObject:NULL argc:0 argv:NULL];
+			JSValueUnprotectSafe(scriptView.jsGlobalContext, getTextCallback);
+		}];
+	
+    [alert addAction:ok];
+    [alert addAction:cancel];
+    [alert addTextFieldWithConfigurationHandler:^(UITextField *textField){}];
+	
+    [self.scriptView.window.rootViewController presentViewController:alert animated:YES completion:nil];
 	return NULL;
 }
-
-- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)index {
-	if( alertView.tag == kEJCoreAlertViewOpenURL ) {
-		if( index == 1 ) {
-			[[UIApplication sharedApplication] openURL:[NSURL URLWithString:urlToOpen]];
-		}
-		[urlToOpen release];
-		urlToOpen = nil;
-	}
-	
-	else if( alertView.tag == kEJCoreAlertViewGetText ) {
-		NSString *text = @"";
-		if( index == 1 ) {
-			text = [[alertView textFieldAtIndex:0] text];
-		}
-		JSValueRef params[] = { NSStringToJSValue(scriptView.jsGlobalContext, text) };
-		[scriptView invokeCallback:getTextCallback thisObject:NULL argc:1 argv:params];
-		
-		JSValueUnprotectSafe(scriptView.jsGlobalContext, getTextCallback);
-		getTextCallback = NULL;
-	}
-}
-
 
 EJ_BIND_FUNCTION(setTimeout, ctx, argc, argv ) {
 	return [scriptView createTimer:ctx argc:argc argv:argv repeat:NO];
@@ -209,13 +201,16 @@ EJ_BIND_GET(appVersion, ctx ) {
 
 EJ_BIND_GET(orientation, ctx ) {
 	int angle = 0;
-	switch( UIApplication.sharedApplication.statusBarOrientation ) {
-		case UIDeviceOrientationPortrait: angle = 0; break;
-		case UIInterfaceOrientationLandscapeLeft: angle = -90; break;
-		case UIInterfaceOrientationLandscapeRight: angle = 90; break;
-		case UIInterfaceOrientationPortraitUpsideDown: angle = 180; break;
-		default: angle = 0; break;
-	}
+	
+	#if !TARGET_OS_TV
+		switch( UIApplication.sharedApplication.statusBarOrientation ) {
+			case UIDeviceOrientationPortrait: angle = 0; break;
+			case UIInterfaceOrientationLandscapeLeft: angle = -90; break;
+			case UIInterfaceOrientationLandscapeRight: angle = 90; break;
+			case UIInterfaceOrientationPortraitUpsideDown: angle = 180; break;
+			default: angle = 0; break;
+		}
+	#endif
 	return JSValueMakeNumber(ctx, angle);
 }
 
@@ -256,11 +251,11 @@ EJ_BIND_GET(onLine, ctx) {
 }
 
 EJ_BIND_GET(allowSleepMode, ctx) {
-	return JSValueMakeBoolean(ctx, ![UIApplication sharedApplication].idleTimerDisabled);
+	return JSValueMakeBoolean(ctx, !UIApplication.sharedApplication.idleTimerDisabled);
 }
 
 EJ_BIND_SET(allowSleepMode, ctx, value) {
-	[UIApplication sharedApplication].idleTimerDisabled = !JSValueToBoolean(ctx, value);
+	UIApplication.sharedApplication.idleTimerDisabled = !JSValueToBoolean(ctx, value);
 }
 
 EJ_BIND_GET(otherAudioPlaying, ctx) {

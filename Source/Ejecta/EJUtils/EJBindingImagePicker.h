@@ -1,3 +1,5 @@
+#if !TARGET_OS_TV
+
 #import "EJBindingBase.h"
 
 #define EJ_PICKER_TYPE_FULLSCREEN 1
@@ -11,7 +13,6 @@ typedef enum {
 @interface EJBindingImagePicker : EJBindingBase <UIImagePickerControllerDelegate, UIPopoverControllerDelegate, UINavigationControllerDelegate> {
 	JSObjectRef callback;
 	UIImagePickerController *picker;
-	UIPopoverController *popover;
 	NSString *imgFormat;
 	float jpgCompression;
 	EJImagePickerType pickerType;
@@ -21,7 +22,6 @@ typedef enum {
 
 - (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info;
 - (void)imagePickerControllerDidCancel:(UIImagePickerController *)picker;
-- (void)popoverControllerDidDismissPopover:(UIPopoverController *)popup;
 - (void)successCallback:(JSValueRef[])params;
 - (void)errorCallback:(NSString *)message;
 - (void)closePicker:(JSContextRef)ctx;
@@ -30,3 +30,5 @@ typedef enum {
 + (BOOL)isSourceTypeAvailable:(NSString *) sourceType;
 
 @end
+
+#endif
