@@ -83,9 +83,7 @@
 	else {
 		completionHandler(NSURLSessionAuthChallengeCancelAuthenticationChallenge, nil);
 		state = kEJHttpRequestStateDone;
-        dispatch_sync(dispatch_get_main_queue(), ^{
-            [self triggerEvent:@"abort"];
-        });
+		[self triggerEvent:@"abort"];
 		NSLog(@"XHR: Aborting Request %@ - wrong credentials", url);
 	}
 }
@@ -103,12 +101,10 @@
 	state = kEJHttpRequestStateDone;
 	
 	[session release]; session = NULL;
-    dispatch_sync(dispatch_get_main_queue(), ^{
-        [self triggerEvent:@"load"];
-        [self triggerEvent:@"loadend"];
-        [self triggerEvent:@"readystatechange"];
-        JSValueUnprotectSafe(scriptView.jsGlobalContext, jsObject);
-    });
+	[self triggerEvent:@"load"];
+	[self triggerEvent:@"loadend"];
+	[self triggerEvent:@"readystatechange"];
+	JSValueUnprotectSafe(scriptView.jsGlobalContext, jsObject);
 }
 
 - (void)didFailWithError:(NSError *)error {
@@ -116,20 +112,14 @@
 	
 	[session release]; session = NULL;
 	if( error.code == kCFURLErrorTimedOut ) {
-        dispatch_sync(dispatch_get_main_queue(), ^{
-            [self triggerEvent:@"timeout"];
-        });
+		[self triggerEvent:@"timeout"];
 	}
 	else {
-        dispatch_sync(dispatch_get_main_queue(), ^{
-            [self triggerEvent:@"error"];
-        });
+		[self triggerEvent:@"error"];
 	}
-    dispatch_sync(dispatch_get_main_queue(), ^{
-        [self triggerEvent:@"loadend"];
-        [self triggerEvent:@"readystatechange"];
-        JSValueUnprotectSafe(scriptView.jsGlobalContext, jsObject);
-    });
+	[self triggerEvent:@"loadend"];
+	[self triggerEvent:@"readystatechange"];
+	JSValueUnprotectSafe(scriptView.jsGlobalContext, jsObject);
 }
 
 - (void)didReceiveResponse:(NSURLResponse *)responsep {
@@ -138,16 +128,14 @@
 	[response release];
 	response = (NSHTTPURLResponse *)[responsep retain];
 	
-    dispatch_sync(dispatch_get_main_queue(), ^{
-        JSContextRef ctx = scriptView.jsGlobalContext;
-        [self triggerEvent:@"progress" properties:(JSEventProperty[]){
-            {"lengthComputable", JSValueMakeBoolean(ctx, response.expectedContentLength != NSURLResponseUnknownLength)},
-            {"total", JSValueMakeNumber(ctx, response.expectedContentLength)},
-            {"loaded", JSValueMakeNumber(ctx, responseBody.length)},
-            {NULL, NULL}
-        }];
-        [self triggerEvent:@"readystatechange"];
-    });
+	JSContextRef ctx = scriptView.jsGlobalContext;
+	[self triggerEvent:@"progress" properties:(JSEventProperty[]){
+		{"lengthComputable", JSValueMakeBoolean(ctx, response.expectedContentLength != NSURLResponseUnknownLength)},
+		{"total", JSValueMakeNumber(ctx, response.expectedContentLength)},
+		{"loaded", JSValueMakeNumber(ctx, responseBody.length)},
+		{NULL, NULL}
+	}];
+	[self triggerEvent:@"readystatechange"];
 }
 
 - (void)URLSession:(NSURLSession * _Nonnull)session
@@ -161,16 +149,14 @@
 	}
 	[responseBody appendData:data];
 	
-    dispatch_sync(dispatch_get_main_queue(), ^{
-        JSContextRef ctx = scriptView.jsGlobalContext;
-        [self triggerEvent:@"progress" properties:(JSEventProperty[]){
-            {"lengthComputable", JSValueMakeBoolean(ctx, response.expectedContentLength != NSURLResponseUnknownLength)},
-            {"total", JSValueMakeNumber(ctx, response.expectedContentLength)},
-            {"loaded", JSValueMakeNumber(ctx, responseBody.length)},
-            {NULL, NULL}
-        }];
-        [self triggerEvent:@"readystatechange"];
-    });
+	JSContextRef ctx = scriptView.jsGlobalContext;
+	[self triggerEvent:@"progress" properties:(JSEventProperty[]){
+		{"lengthComputable", JSValueMakeBoolean(ctx, response.expectedContentLength != NSURLResponseUnknownLength)},
+		{"total", JSValueMakeNumber(ctx, response.expectedContentLength)},
+		{"loaded", JSValueMakeNumber(ctx, responseBody.length)},
+		{NULL, NULL}
+	}];
+	[self triggerEvent:@"readystatechange"];
 }
 
 
